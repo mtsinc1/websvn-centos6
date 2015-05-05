@@ -8,7 +8,7 @@ RUN echo >>/etc/yum.conf "proxy=http://10.0.1.16:3128"
 RUN yum -y install websvn websvn-selinux svn
 ADD websvn.conf /etc/httpd/conf.d/websvn.conf
 RUN echo >>/etc/websvn/config.php "\$config->addRepository('Mousetech', 'http://svn.mousetech.com/svn');"
-
+RUN echo ServerName svn.mousetech.com:80 >>/etc/httpd/conf/httpd.conf
 
 EXPOSE 80 443
 

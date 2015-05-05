@@ -38,6 +38,9 @@ these designations can be simply appended to the end of the model confing.php fi
 The current generation of this Dockerfile merely copies in the hard-coded locations. A future
 improvement could allow external runtime sources as well as mods to the Apache and php config files.
 
+The model websvn.conf Apache config runs under the container's default host and allows all
+access. Customize as needed.
+
 To run, customize the Dockerfile, build the image and use a command in the form:
 
     docker run -d -p 9999:80 --name websvn <image_id>
